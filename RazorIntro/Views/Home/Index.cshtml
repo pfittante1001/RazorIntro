@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    
 </head>
 <body>
     @{
@@ -73,5 +73,56 @@
         int age = 20;
         <h5>My name is @name and I am @age years old.</h5>
     }
+
+    @{
+        string message2;
+        message2 = "Hello Razor";
+    }
+    <h5>@message2</h5>
+
+    @{ 
+        int numone = 5;
+        int numtwo = 10;
+        int sum = numone + numtwo;
+    }
+    <h5>The total is @sum</h5>
+
+    @{ 
+        string number = "pete";
+        int num;
+
+        if(number.IsInt()== true)
+        {
+            num = number.AsInt();
+
+            <h5>@num is an Integer</h5>
+        }else
+        {
+            <h5>@number is not an integer</h5>
+        }
+    }
+
+    @{ 
+        string a = "false";
+        bool b;
+
+        if(a.IsBool()== true)
+        {
+            b = a.AsBool();
+            <h5>@b</h5>
+        }
+    }
+    
+    @{ 
+        var num5 = 2342;
+        DateTime d=DateTime.Now;
+        bool t = true;
+
+        <h5>@num5.ToString() is String Now.</h5>
+        <h5>@d.ToString() is String Now.</h5>
+        <h5>@t.ToString() is String Now.</h5>
+
+    }
+    
 </body>
 </html>
